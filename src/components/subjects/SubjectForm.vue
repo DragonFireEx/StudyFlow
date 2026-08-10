@@ -113,7 +113,7 @@ label,
 legend {
   font-size: 0.875rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
 }
 input {
   width: 100%;
@@ -138,8 +138,8 @@ input:focus {
   gap: 10px;
 }
 .color-option {
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   border: 3px solid transparent;
   border-radius: 50%;
 }
