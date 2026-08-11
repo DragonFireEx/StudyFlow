@@ -18,3 +18,12 @@ const getInitialTasks = (): StudyTask[] => {
 }
 
 const tasks = ref<StudyTask[]>(getInitialTasks())
+
+const saveTasks = () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks.value))
+}
+
+const addTask = (newTask: StudyTask) => {
+    tasks.value.push(newTask)
+    saveTasks()
+}
