@@ -27,3 +27,21 @@ const addTask = (newTask: StudyTask) => {
     tasks.value.push(newTask)
     saveTasks()
 }
+
+const updateTask = (
+  id: string,
+  updatedData: Partial<Omit<StudyTask, "id" | "createdAt">>,
+) => {
+  const taskIndex = tasks.value.findIndex((task) => task.id === id)
+
+  if (taskIndex === -1) {
+    return
+  }
+
+  tasks.value[taskIndex] = {
+    ...tasks.value[taskIndex],
+    ...updatedData,
+  }
+
+  saveTasks()
+}
