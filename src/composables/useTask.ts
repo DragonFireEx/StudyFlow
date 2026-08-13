@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import type { StudyTask } from "../types/task";
+import type { StudyTask, TaskStatus } from "../types/task";
 
 const STORAGE_KEY = 'studyflow-subjects'
 
@@ -50,4 +50,12 @@ const deleteTask = (id: string) => {
     tasks.value = tasks.value.filter((tasks) => tasks.id !== id)
 
     saveTasks()
+}
+
+const toggleTaskStatus = (task: StudyTask) => {
+    const newStatus: TaskStatus = task.status === "done" ? "todo" : "done"
+
+    updateTask(task.id, {
+        status: newStatus,
+    })
 }
