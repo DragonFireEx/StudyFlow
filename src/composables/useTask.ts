@@ -45,3 +45,9 @@ const updateTask = (
 
   saveTasks()
 }
+
+const deleteTask = (id: string) => {
+    tasks.value = tasks.value.filter((tasks) => tasks.id !== id)
+
+    saveTasks()
+}
